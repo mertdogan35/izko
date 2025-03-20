@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react';
 import WebSocketService from '../services/WebSocketService';
 import { MarketData, WebSocketResponse, CurrencyData } from '../types/GoldData';
+import { useAdSense } from '../hooks/useAdSense';
 import './GoldPrices.css';
 
 interface CalculatedPrices {
@@ -22,6 +23,7 @@ interface PriceChange {
 }
 
 const GoldPrices = () => {
+  useAdSense(); // Initialize AdSense
   const [marketData, setMarketData] = useState<MarketData | null>(null);
   const [calculatedPrices, setCalculatedPrices] = useState<CalculatedPrices | null>(null);
   const [loading, setLoading] = useState(true);
@@ -330,6 +332,19 @@ const GoldPrices = () => {
 
   return (
     <div className="market-data">
+      
+      {/* Google AdSense Advertisement */}
+      <div className="ad-container">
+        <ins 
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-9341874671398118"
+          data-ad-slot="3896890702"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+      </div>
+      
       <div className="price-table">
         <table>
           <thead>
@@ -439,6 +454,18 @@ const GoldPrices = () => {
         </div>
       </div>
 
+      {/* Google AdSense Advertisement */}
+      <div className="ad-container">
+        <ins 
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-client="ca-pub-9341874671398118"
+          data-ad-slot="3896890702"
+          data-ad-format="auto"
+          data-full-width-responsive="true"
+        />
+      </div>
+
       {/* Tüm market verileri tablosu */}
       <div className="all-market-data">
         <h2>Tüm Piyasa Verileri</h2>
@@ -485,4 +512,4 @@ const GoldPrices = () => {
   );
 };
 
-export default GoldPrices; 
+export default GoldPrices;

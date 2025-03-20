@@ -85,34 +85,95 @@ td {
 .update-time {
   text-align: right;
 }
+.all-market-data td:first-child {
+  text-align: left !important;
+}
 
 /* Responsive tasarım */
 @media (max-width: 768px) {
-  .market-data h1 {
-    font-size: 18px;
+  .App{
+    padding: 0px !important;
+  }
+  .market-data {
+    padding: 10px;
   }
 
-  th, td {
+  .price-table table {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .price-table th,
+  .price-table td {
+    padding: 8px;
     font-size: 14px;
-    padding: 5px;
   }
 
   .welcome-cell {
-    font-size: 14px;
+    font-size: 12px;
+    padding: 5px;
   }
 
   .bottom-info {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    gap: 10px;
     text-align: center;
   }
 
   .market-info {
     flex-direction: column;
-    gap: 5px;
+    gap: 8px;
   }
 
-  .update-time {
-    text-align: center;
+  .all-market-data {
+    margin-top: 1rem;
+    padding: 0.3rem !important;
+  }
+
+  .all-market-data table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .all-market-data th:first-child {
+    position: sticky;
+    left: 0;
+    background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+    z-index: 1;
+    text-align: left !important;
+  }
+
+  .all-market-data td:first-child {
+    position: sticky;
+    left: 0;
+    background: white;
+    z-index: 1;
+    text-align: left !important;
+  }
+
+  .all-market-data th,
+  .all-market-data td {
+    padding: 6px;
+    font-size: 13px;
+  }
+
+  .digital-clock {
+    font-size: 14px;
+  }
+}
+
+/* Ad container styles */
+.ad-container {
+  width: 100%;
+  max-width: 100%;
+  margin: 20px auto;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .ad-container {
+    margin: 15px auto;
   }
 }
 
@@ -190,7 +251,7 @@ td.price-down {
 /* Tüm market verileri tablosu */
 .all-market-data {
   margin-top: 2rem;
-  padding: 2rem;
+  padding: 1rem;
   background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
   border-radius: 15px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -237,6 +298,1091 @@ td.price-down {
   animation: highlightPriceDown 1s ease-out;
   font-weight: bold;
   text-shadow: 0 0 1px rgba(255, 23, 68, 0.2);
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+.digital-clock {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
+}
+
+@keyframes highlightRowUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightRowDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceUp {
+  0% { background-color: rgba(76, 175, 80, 0.3); }
+  50% { background-color: rgba(76, 175, 80, 0.2); }
+  100% { background-color: transparent; }
+}
+
+@keyframes highlightPriceDown {
+  0% { background-color: rgba(244, 67, 54, 0.3); }
+  50% { background-color: rgba(244, 67, 54, 0.2); }
+  100% { background-color: transparent; }
 }
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
