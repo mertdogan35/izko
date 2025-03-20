@@ -3,7 +3,7 @@
 <div align="center">
   <img src="assets/logo.png" alt="İzmir Kuyumcular Odası Logo" width="200"/>
   <br/>
-  <em>Değerli Metal ve Kuyumculuk Ürünleri Fiyat Takip Platformu</em>
+  <em>İzmir Kuyumcular Odası Fiyat Takip Uygulaması</em>
 </div>
 
 ## 📋 Proje Hakkında
