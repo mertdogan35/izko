@@ -98,14 +98,14 @@ This platform is a comprehensive system that tracks the recommended price list p
 
 ## 🌟 Demo
 
-Uygulamanın canlı demo versiyonuna [buradan ulaşabilirsiniz](https://izko.kodevi.com.tr){:target="_blank"}.
+Uygulamanın canlı demo versiyonuna [buradan ulaşabilirsiniz](https://izko.kodevi.com.tr) ( CTRL+CLİCK ).
 
 ---
 
 ## 📞 İletişim
 
 Soru, öneri ve şikayetleriniz için bizimle iletişime geçin:  
-[LinkedIn Profilim](https://www.linkedin.com/in/mert-do%C4%9Fan/){:target="_blank"}
+[LinkedIn Profilim](https://www.linkedin.com/in/mert-do%C4%9Fan/) ( CTRL+CLİCK )
 
 ---
 
