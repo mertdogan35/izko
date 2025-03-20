@@ -2,19 +2,27 @@
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .market-data h1 {
   text-align: center;
-  color: #ff0000;
-  font-size: 24px;
-  margin-bottom: 20px;
+  color: #182848;
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .price-table {
-  background-color: #fff;
-  border: 1px solid #ccc;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 table {
@@ -29,9 +37,11 @@ th, td {
 }
 
 th {
-  background-color: #ffff00;
-  font-weight: bold;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  color: white;
+  font-weight: 600;
   font-size: 18px;
+  padding: 15px 10px;
 }
 
 td {
@@ -51,12 +61,15 @@ td {
 
 .bottom-info {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 10px;
-  padding: 10px;
-  border: 1px solid #000;
-  margin-top: -1px;
-  background-color: #ffff00;
+  grid-template-columns: 1fr 3fr 0fr;
+  gap: 15px;
+  padding: 20px;
+  border: none;
+  margin-top: 10px;
+  background: linear-gradient(90deg, rgba(24,40,72,1) 1%, rgba(60,87,150,1) 49%, rgba(24,40,72,1) 100%);
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .has-altin {
@@ -110,6 +123,7 @@ td {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  color: white;
 }
 
 .spinner {
@@ -176,7 +190,10 @@ td.price-down {
 /* Tüm market verileri tablosu */
 .all-market-data {
   margin-top: 2rem;
-  padding: 1rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .all-market-data table {
@@ -193,9 +210,11 @@ td.price-down {
 }
 
 .all-market-data th {
-  background-color: #f5f5f5;
-  font-weight: bold;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  color: white;
+  font-weight: 600;
   text-align: center;
+  padding: 15px 10px;
 }
 
 .row-up {
@@ -207,25 +226,28 @@ td.price-down {
 }
 
 .price-up {
-  color: #4caf50 !important;
+  color: #00c853 !important;
   animation: highlightPriceUp 1s ease-out;
   font-weight: bold;
+  text-shadow: 0 0 1px rgba(0, 200, 83, 0.2);
 }
 
 .price-down {
-  color: #f44336 !important;
+  color: #ff1744 !important;
   animation: highlightPriceDown 1s ease-out;
   font-weight: bold;
+  text-shadow: 0 0 1px rgba(255, 23, 68, 0.2);
 }
 .digital-clock {
-  font-family: 'Courier New', Courier, monospace; /* Monospace font kullanımı */
-  font-size: 1.5em; /* Yazı boyutu */
-  color: #ffffff; /* Beyaz renk (temaya uyumlu) */
-  background-color: #333333; /* Koyu gri arka plan (temaya uyumlu) */
-  padding: 10px; /* İç boşluk */
-  border-radius: 5px; /* Kenar yuvarlama */
-  display: inline-block; /* İçerik etrafında boşluk bırakma */
-  box-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.5); /* Parlak sarı gölge efekti */
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.8em;
+  color: #ffffff;
+  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
+  padding: 15px 25px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
 }
 
 @keyframes highlightRowUp {
@@ -250,4 +272,4 @@ td.price-down {
   0% { background-color: rgba(244, 67, 54, 0.3); }
   50% { background-color: rgba(244, 67, 54, 0.2); }
   100% { background-color: transparent; }
-} 
+}

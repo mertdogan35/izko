@@ -343,7 +343,7 @@ const GoldPrices = () => {
           </thead>
           <tbody>
             <tr>
-              <td>22 Ayar</td>
+              <td><b>22 Ayar</b></td>
               <td className={getPriceClassName('yirmiiki')}>
                 {formatPrice(calculatedPrices?.yirmiiki || 0)}
               </td>
@@ -356,25 +356,25 @@ const GoldPrices = () => {
               </td>
             </tr>
             <tr>
-              <td>18 Ayar</td>
+              <td><b>18 Ayar</b></td>
               <td className={getPriceClassName('onsekiz')}>
                 {formatPrice(calculatedPrices?.onsekiz || 0)}
               </td>
             </tr>
             <tr>
-              <td>14 Ayar</td>
+              <td><b>14 Ayar</b></td>
               <td className={getPriceClassName('ondort')}>
                 {formatPrice(calculatedPrices?.ondort || 0)}
               </td>
             </tr>
             <tr>
-              <td>Gram Altın</td>
+              <td><b>Gram Altın</b></td>
               <td className={getPriceClassName('gram')}>
                 {formatPrice(calculatedPrices?.gram || 0)}
               </td>
             </tr>
             <tr>
-              <td>Cumhuriyet</td>
+              <td><b>Cumhuriyet</b></td>
               <td className={getPriceClassName('ata')}>
                 {formatPrice(calculatedPrices?.ata || 0)}
               </td>
@@ -392,7 +392,7 @@ const GoldPrices = () => {
           </thead>
           <tbody>
             <tr>
-              <td>Çeyrek</td>
+              <td><b>Çeyrek</b></td>
               <td className={getPriceClassName('yeniceyrek')}>
                 {formatPrice(calculatedPrices?.yeniceyrek || 0)}
               </td>
@@ -401,7 +401,7 @@ const GoldPrices = () => {
               </td>
             </tr>
             <tr>
-              <td>Yarım</td>
+              <td><b>Yarım</b></td>
               <td className={getPriceClassName('yeniyarim')}>
                 {formatPrice(calculatedPrices?.yeniyarim || 0)}
               </td>
@@ -410,7 +410,7 @@ const GoldPrices = () => {
               </td>
             </tr>
             <tr>
-              <td>Ziynet</td>
+              <td><b>Ziynet</b></td>
               <td className={getPriceClassName('yenitam')}>
                 {formatPrice(calculatedPrices?.yenitam || 0)}
               </td>

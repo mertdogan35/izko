@@ -5,8 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: linear-gradient(135deg, #5b5b5b 0%, #1a1a1a 100%);
+  min-height: 100vh;
 }
 
 .App {
   padding: 20px;
-} 
+}
