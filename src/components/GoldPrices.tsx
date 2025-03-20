@@ -349,7 +349,7 @@ const GoldPrices = () => {
               </td>
               <td rowSpan={5} className="welcome-cell">
                 İZMİR KUYUMCULAR ODASI<br />
-                TAVSİYE EDİLEN FIYATLARDIR!<br /><br />
+                TAVSİYE EDİLEN FİYATLARDIR!<br /><br />
                 <div className="digital-clock">
                   {currentTime}
                 </div>
