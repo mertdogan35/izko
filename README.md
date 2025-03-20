@@ -17,9 +17,6 @@ Bu platform, İzmir Kuyumcular Odası tarafından yayınlanan tavsiye edilen fiy
 - 🔄 **Canlı Veri Takibi**: İzmir Kuyumcular Odası resmi tavsiye fiyatlarının anlık güncellemeleri
 - 📊 **Detaylı Analizler**: Günlük, haftalık ve aylık bazda fiyat değişim grafikleri
 - 📱 **Mobil Erişim**: Responsive tasarım ile her cihazdan kolay erişim
-- 🔔 **Bildirim Sistemi**: Önemli fiyat değişikliklerinde anlık uyarılar
-- 🔍 **Gelişmiş Arama**: Ürün kategorilerine göre filtreleme ve karşılaştırma
-- 📈 **Trend Göstergeleri**: Piyasa eğilimlerini görselleştiren göstergeler
 
 ---
 
@@ -66,9 +63,6 @@ This platform is a comprehensive system that tracks the recommended price list p
 - 🔄 **Live Data Tracking**: Real-time updates of the official recommended prices from the Izmir Jewelers Chamber
 - 📊 **Detailed Analyses**: Price change graphs on a daily, weekly, and monthly basis
 - 📱 **Mobile Access**: Easy access from any device with responsive design
-- 🔔 **Notification System**: Instant alerts for significant price changes
-- 🔍 **Advanced Search**: Filtering and comparison by product categories
-- 📈 **Trend Indicators**: Indicators visualizing market trends
 
 ---
 
@@ -104,18 +98,18 @@ This platform is a comprehensive system that tracks the recommended price list p
 
 ## 🌟 Demo
 
-Uygulamanın canlı demo versiyonuna [buradan ulaşabilirsiniz](https://izko.kodevi.com.tr).
+Uygulamanın canlı demo versiyonuna [buradan ulaşabilirsiniz](https://izko.kodevi.com.tr){:target="_blank"}.
 
 ---
 
 ## 📞 İletişim
 
 Soru, öneri ve şikayetleriniz için bizimle iletişime geçin:  
-[LinkedIn Profilim](https://www.linkedin.com/in/mert-do%C4%9Fan/)
+[LinkedIn Profilim](https://www.linkedin.com/in/mert-do%C4%9Fan/){:target="_blank"}
 
 ---
 
 ## 📜 Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır.  
-© 2023 İzmir Kuyumcular Odası Fiyat Takip Sistemi
+© 2025 İzmir Kuyumcular Odası Fiyat Takip Sistemi
