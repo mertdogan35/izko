@@ -41,7 +41,7 @@ class WebSocketService {
 
   private setupSocketListeners(socket: WebSocket) {
     socket.onopen = () => {
-      console.log('WebSocket bağlantısı açıldı');
+      //console.log('WebSocket bağlantısı açıldı');
       
       setTimeout(() => {
         if (socket.readyState === WebSocket.OPEN) {
@@ -58,7 +58,7 @@ class WebSocketService {
           try {
             const jsonStr = data.substring(2);
             const jsonData = JSON.parse(jsonStr);
-             console.log('Çekilen Veriler:', jsonData);
+            // console.log('Çekilen Veriler:', jsonData);
             if (jsonData[0] === 'price_changed' && jsonData[1]?.data) {
               const marketData = jsonData[1].data;
 
@@ -86,7 +86,7 @@ class WebSocketService {
     };
 
     socket.onclose = (event: CloseEvent) => {
-      console.log('WebSocket bağlantısı kapandı', event.code, event.reason);
+      //console.log('WebSocket bağlantısı kapandı', event.code, event.reason);
       this.stopPing();
       this.scheduleReconnect();
     };

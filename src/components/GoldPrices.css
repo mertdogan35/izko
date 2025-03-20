@@ -217,6 +217,16 @@ td.price-down {
   animation: highlightPriceDown 1s ease-out;
   font-weight: bold;
 }
+.digital-clock {
+  font-family: 'Courier New', Courier, monospace; /* Monospace font kullanımı */
+  font-size: 1.5em; /* Yazı boyutu */
+  color: #ffffff; /* Beyaz renk (temaya uyumlu) */
+  background-color: #333333; /* Koyu gri arka plan (temaya uyumlu) */
+  padding: 10px; /* İç boşluk */
+  border-radius: 5px; /* Kenar yuvarlama */
+  display: inline-block; /* İçerik etrafında boşluk bırakma */
+  box-shadow: 0 0 10px rgba(255, 255, 0, 0.8), 0 0 20px rgba(255, 255, 0, 0.5); /* Parlak sarı gölge efekti */
+}
 
 @keyframes highlightRowUp {
   0% { background-color: rgba(76, 175, 80, 0.3); }

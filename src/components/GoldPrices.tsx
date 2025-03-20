@@ -31,6 +31,7 @@ const GoldPrices = () => {
   const [marketPriceChanges, setMarketPriceChanges] = useState<{[key: string]: 'up' | 'down' | null}>({});
   const previousMarketPrices = useRef<{[key: string]: number}>({});
   const lastValidDataRef = useRef<{[key: string]: CurrencyData}>({});
+  const [currentTime, setCurrentTime] = useState<string>('');
 
   useEffect(() => {
     // Fiyat değişimlerini kontrol et
@@ -142,6 +143,23 @@ const GoldPrices = () => {
       WebSocketService.unsubscribe('price_changed');
       WebSocketService.unsubscribe('calculated_prices');
     };
+  }, []);
+
+  useEffect(() => {
+    // Saat güncelleme fonksiyonu
+    const updateTime = () => {
+      const now = new Date();
+      setCurrentTime(`${now.getDate().toString().padStart(2, '0')}.${(now.getMonth() + 1).toString().padStart(2, '0')}.${now.getFullYear()} ${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}:${now.getSeconds().toString().padStart(2, '0')}`);
+    };
+
+    // İlk güncelleme
+    updateTime();
+
+    // Her saniye güncelle
+    const intervalId = setInterval(updateTime, 1000);
+
+    // Temizleme işlemi
+    return () => clearInterval(intervalId);
   }, []);
 
   const formatPrice = (price: number) => {
@@ -290,15 +308,7 @@ const GoldPrices = () => {
 
   // Satır için className oluştur
   const getRowClassName = (key: string, data: CurrencyData) => {
-    const satisDegisim = marketPriceChanges[`${key}_satis`];
-    const alisDegisim = marketPriceChanges[`${key}_alis`];
-    
-    if (satisDegisim === 'up' || alisDegisim === 'up') {
-      return 'row-up';
-    }
-    if (satisDegisim === 'down' || alisDegisim === 'down') {
-      return 'row-down';
-    }
+    // Renklendirmeyi kapatmak için boş bir string döndür
     return '';
   };
 
@@ -340,7 +350,9 @@ const GoldPrices = () => {
               <td rowSpan={5} className="welcome-cell">
                 İZMİR KUYUMCULAR ODASI<br />
                 TAVSİYE EDİLEN FIYATLARDIR!<br /><br />
-                {formatDate(marketData?.ALTIN?.tarih)}
+                <div className="digital-clock">
+                  {currentTime}
+                </div>
               </td>
             </tr>
             <tr>
@@ -441,7 +453,7 @@ const GoldPrices = () => {
               <th>Düşük</th>
               <th>Yüksek</th>
               <th>Değişim</th>
-              <th>Tarih</th>
+              <th>Son Güncelleme</th>
             </tr>
           </thead>
           <tbody>
