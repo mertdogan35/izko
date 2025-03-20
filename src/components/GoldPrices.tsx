@@ -330,8 +330,6 @@ const GoldPrices = () => {
 
   return (
     <div className="market-data">
-      <h1>İzmir Kuyumcular Odası Tavsiye Edilen Fiyatlarıdır.</h1>
-      
       <div className="price-table">
         <table>
           <thead>
