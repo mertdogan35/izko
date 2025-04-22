@@ -146,7 +146,7 @@ class WebSocketService {
     }
 
     try {
-      // Hesaplama fonksiyonu
+      // Hesaplama fonksiyonu - İzmir Kuyumcular Odası'nın güncel formülü
       const calculatePrice = (profit: number, number: number, altin: number) => {
         const result = (altin * profit) + number;
         return Math.ceil(result / 10) * 10; // En yakın 10'a yuvarlama
@@ -158,13 +158,13 @@ class WebSocketService {
       };
 
       const newPrices: CalculatedPrices = {
-        gram: calculatePrice(0.925, 180, gramAltin),
-        yirmiiki: calculatePrice(0.925, 180, gramAltin),
+        gram: calculatePrice(0.925, 230, gramAltin),
+        yirmiiki: calculatePrice(0.925, 230, gramAltin),
         ondort: calculatePrice(0.8, 0, gramAltin),
         onsekiz: calculatePrice(0.85, 0, gramAltin),
-        yeniceyrek: calculatePrice(1.65, 230, gramAltin),
-        eskiceyrek: calculatePrice(1.65, 220, gramAltin),
-        ata: calculatePrice(6.7, 650, gramAltin), // Cumhuriyet/Ata altını hesaplaması
+        yeniceyrek: calculatePrice(1.65, 280, gramAltin),
+        eskiceyrek: calculatePrice(1.65, 270, gramAltin),
+        ata: calculatePrice(6.7, 800, gramAltin), // Cumhuriyet/Ata altını hesaplaması
         yeniyarim: 0,
         eskiyarim: 0,
         yenitam: 0,
@@ -272,4 +272,4 @@ class WebSocketService {
   }
 }
 
-export default new WebSocketService(); 
+export default new WebSocketService();

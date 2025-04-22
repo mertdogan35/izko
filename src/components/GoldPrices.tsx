@@ -349,47 +349,49 @@ const GoldPrices = () => {
         <table>
           <thead>
             <tr>
-              <th>ALTIN</th>
-              <th>SATIŞ</th>
-              <th>HOŞGELDİNİZ</th>
+              <th className="altin-header">ALTIN</th>
+              <th className="satis-header">SATIŞ</th>
+              <th className="hosgeldiniz-header">HOŞGELDİNİZ</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><b>22 Ayar</b></td>
-              <td className={getPriceClassName('yirmiiki')}>
-                {formatPrice(calculatedPrices?.yirmiiki || 0)}
+              <td className="altin-type">22 Ayar</td>
+              <td className={`altin-price ${getPriceClassName('yirmiiki')}`}>
+                <div>{formatPrice(calculatedPrices?.yirmiiki || 0)}</div>
               </td>
               <td rowSpan={5} className="welcome-cell">
-                İZMİR KUYUMCULAR ODASI<br />
-                TAVSİYE EDİLEN FİYATLARDIR!<br /><br />
-                <div className="digital-clock">
-                  {currentTime}
+                <div className="welcome-content">
+                  <div className="welcome-title">İZMİR KUYUMCULAR ODASI</div>
+                  <div className="welcome-subtitle">TAVSİYE EDİLEN FİYATLARDIR!</div>
+                  <div className="digital-clock">
+                    {currentTime}
+                  </div>
                 </div>
               </td>
             </tr>
             <tr>
-              <td><b>18 Ayar</b></td>
-              <td className={getPriceClassName('onsekiz')}>
-                {formatPrice(calculatedPrices?.onsekiz || 0)}
+              <td className="altin-type">18 Ayar</td>
+              <td className={`altin-price ${getPriceClassName('onsekiz')}`}>
+                <div>{formatPrice(calculatedPrices?.onsekiz || 0)}</div>
               </td>
             </tr>
             <tr>
-              <td><b>14 Ayar</b></td>
-              <td className={getPriceClassName('ondort')}>
-                {formatPrice(calculatedPrices?.ondort || 0)}
+              <td className="altin-type">14 Ayar</td>
+              <td className={`altin-price ${getPriceClassName('ondort')}`}>
+                <div>{formatPrice(calculatedPrices?.ondort || 0)}</div>
               </td>
             </tr>
             <tr>
-              <td><b>Gram Altın</b></td>
-              <td className={getPriceClassName('gram')}>
-                {formatPrice(calculatedPrices?.gram || 0)}
+              <td className="altin-type">Gram Altın</td>
+              <td className={`altin-price ${getPriceClassName('gram')}`}>
+                <div>{formatPrice(calculatedPrices?.gram || 0)}</div>
               </td>
             </tr>
             <tr>
-              <td><b>Cumhuriyet</b></td>
-              <td className={getPriceClassName('ata')}>
-                {formatPrice(calculatedPrices?.ata || 0)}
+              <td className="altin-type">Cumhuriyet</td>
+              <td className={`altin-price ${getPriceClassName('ata')}`}>
+                <div>{formatPrice(calculatedPrices?.ata || 0)}</div>
               </td>
             </tr>
           </tbody>
@@ -398,57 +400,55 @@ const GoldPrices = () => {
         <table className="sub-table">
           <thead>
             <tr>
-              <th></th>
-              <th>YENİ</th>
-              <th>ESKİ</th>
+              <th className="empty-header"></th>
+              <th className="yeni-header">YENİ</th>
+              <th className="eski-header">ESKİ</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><b>Çeyrek</b></td>
-              <td className={getPriceClassName('yeniceyrek')}>
-                {formatPrice(calculatedPrices?.yeniceyrek || 0)}
+              <td className="altin-type">Çeyrek</td>
+              <td className={`altin-price ${getPriceClassName('yeniceyrek')}`}>
+                <div>{formatPrice(calculatedPrices?.yeniceyrek || 0)}</div>
               </td>
-              <td className={getPriceClassName('eskiceyrek')}>
-                {formatPrice(calculatedPrices?.eskiceyrek || 0)}
-              </td>
-            </tr>
-            <tr>
-              <td><b>Yarım</b></td>
-              <td className={getPriceClassName('yeniyarim')}>
-                {formatPrice(calculatedPrices?.yeniyarim || 0)}
-              </td>
-              <td className={getPriceClassName('eskiyarim')}>
-                {formatPrice(calculatedPrices?.eskiyarim || 0)}
+              <td className={`altin-price ${getPriceClassName('eskiceyrek')}`}>
+                <div>{formatPrice(calculatedPrices?.eskiceyrek || 0)}</div>
               </td>
             </tr>
             <tr>
-              <td><b>Ziynet</b></td>
-              <td className={getPriceClassName('yenitam')}>
-                {formatPrice(calculatedPrices?.yenitam || 0)}
+              <td className="altin-type">Yarım</td>
+              <td className={`altin-price ${getPriceClassName('yeniyarim')}`}>
+                <div>{formatPrice(calculatedPrices?.yeniyarim || 0)}</div>
               </td>
-              <td className={getPriceClassName('eskitam')}>
-                {formatPrice(calculatedPrices?.eskitam || 0)}
+              <td className={`altin-price ${getPriceClassName('eskiyarim')}`}>
+                <div>{formatPrice(calculatedPrices?.eskiyarim || 0)}</div>
+              </td>
+            </tr>
+            <tr>
+              <td className="altin-type">Ziynet</td>
+              <td className={`altin-price ${getPriceClassName('yenitam')}`}>
+                <div>{formatPrice(calculatedPrices?.yenitam || 0)}</div>
+              </td>
+              <td className={`altin-price ${getPriceClassName('eskitam')}`}>
+                <div>{formatPrice(calculatedPrices?.eskitam || 0)}</div>
               </td>
             </tr>
           </tbody>
         </table>
 
         <div className="bottom-info">
-          <div className="has-altin">
-            Has Altın: <span className={getPriceClassName('ALTIN')}>
-              {formatDecimal(marketData?.ALTIN?.satis, 2)}
-            </span>
+          <div className="info-item">
+            <div className="digital-clock-bottom">{currentTime}</div>
           </div>
           <div className="market-info">
-            <span>ONS: <span className={getPriceClassName('ONS')}>
-              {formatPrice(Number(marketData?.ONS?.satis || 0))}
+            <span className="info-label">ONS: <span className={`info-value ${getPriceClassName('ONS')}`}>
+              {Number(marketData?.ONS?.satis || 0).toFixed(1)}
             </span></span>
-            <span>Dolar: <span className={getPriceClassName('USDTRY')}>
-              {formatDecimal(Number(marketData?.USDTRY?.satis || 0), 3)}
+            <span className="info-label">Dolar: <span className={`info-value ${getPriceClassName('USDTRY')}`}>
+              {Number(marketData?.USDTRY?.satis || 0).toFixed(3)}
             </span></span>
-            <span>Euro: <span className={getPriceClassName('EURTRY')}>
-              {formatDecimal(marketData?.EURTRY?.satis, 2)}
+            <span className="info-label">Euro: <span className={`info-value ${getPriceClassName('EURTRY')}`}>
+              {Number(marketData?.EURTRY?.satis || 0).toFixed(3)}
             </span></span>
           </div>
         </div>

@@ -2,77 +2,138 @@
   max-width: 1200px;
   margin: 20px auto;
   padding: 20px;
-  font-family: 'Roboto', Arial, sans-serif;
-  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  background-color: #444444;
+  border-radius: 3px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  color: #444444;
 }
 
 .market-data h1 {
   text-align: center;
-  color: #182848;
+  color: #ff0000;
   font-size: 28px;
   margin-bottom: 30px;
-  font-weight: 600;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  font-weight: 900;
 }
 
 .price-table {
-  background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background-color: #ffff00;
+  border: 2px solid #000;
   overflow: hidden;
+  width: 100%;
 }
 
 table {
   width: 100%;
   border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 14px;
 }
 
-th, td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #000;
+th,
+td {
+  padding: 6px 20px;
+  text-align: center;
+  border: 2px solid #000;
+  font-size: 18px;
 }
 
 th {
-  background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  color: white;
-  font-weight: 600;
-  font-size: 18px;
-  padding: 15px 10px;
+  font-weight: bold;
+  font-size: 21px !important;
+  border-bottom: 2px solid #000 !important;
+  border-right: 2px solid #000 !important;
 }
 
-td {
-  font-size: 16px;
+.altin-header,
+.satis-header,
+.hosgeldiniz-header {
+  font-size: 32px;
+  padding: 10px;
+}
+
+.altin-type {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  border-right: 2px solid #000 !important;
+  border-bottom: 2px solid #000 !important;
+}
+
+.altin-price {
+  font-size: 24px;
+  text-align: center;
+  color: #ff0b00;
+  font-weight: bold;
+  border-right: 2px solid #000 !important;
+  border-bottom: 2px solid #000 !important;
 }
 
 .welcome-cell {
   text-align: center;
   vertical-align: middle;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.welcome-title {
+  font-size: 28px;
   font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.welcome-subtitle {
+  font-size: 24px;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.digital-clock {
   font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
 }
 
 .sub-table {
-  margin-top: -1px;
+  margin-top: 0;
+  border-top: none;
+}
+
+.empty-header,
+.yeni-header,
+.eski-header {
+  font-size: 32px;
+  padding: 10px;
 }
 
 .bottom-info {
-  display: grid;
-  grid-template-columns: 1fr 3fr 0fr;
-  gap: 15px;
-  padding: 20px;
-  border: none;
-  margin-top: 10px;
-  background: linear-gradient(90deg, rgba(24,40,72,1) 1%, rgba(60,87,150,1) 49%, rgba(24,40,72,1) 100%);
-  color: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #eaebeb;
+  border: 2px solid #000;
+  margin-top: 0;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
 }
 
-.has-altin {
+.info-item {
+  font-weight: bold;
+}
+
+.digital-clock-bottom {
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -80,20 +141,33 @@ td {
   display: flex;
   justify-content: space-around;
   font-weight: bold;
+  width: 70%;
 }
 
-.update-time {
-  text-align: right;
+.info-label {
+  margin: 0 10px;
+  font-size: 20px;
 }
+
+.info-value {
+  color: #ff0000;
+  font-weight: bold;
+}
+
 .all-market-data td:first-child {
   text-align: left !important;
 }
 
 /* Responsive tasarım */
 @media (max-width: 768px) {
-  .App{
+  .welcome-title, .welcome-subtitle {
+    font-size: 18px !important;
+  }
+
+  .App {
     padding: 0px !important;
   }
+
   .market-data {
     padding: 10px;
   }
@@ -132,9 +206,10 @@ td {
 
   .all-market-data table {
     display: block;
-    overflow-x: auto;
+    overflow-x: auto !important;
     white-space: nowrap;
   }
+
   .all-market-data th:first-child {
     position: sticky;
     left: 0;
@@ -197,8 +272,13 @@ td {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /* Satır renklendirme */
@@ -211,26 +291,30 @@ tr.row-down {
 }
 
 @keyframes blinkRowUp {
-  0% { 
-    background-color: transparent; 
+  0% {
+    background-color: transparent;
   }
-  50% { 
-    background-color: rgba(0, 255, 0, 0.2); 
+
+  50% {
+    background-color: rgba(0, 255, 0, 0.2);
   }
-  100% { 
-    background-color: transparent; 
+
+  100% {
+    background-color: transparent;
   }
 }
 
 @keyframes blinkRowDown {
-  0% { 
-    background-color: transparent; 
+  0% {
+    background-color: transparent;
   }
-  50% { 
-    background-color: rgba(255, 0, 0, 0.2); 
+
+  50% {
+    background-color: rgba(255, 0, 0, 0.2);
   }
-  100% { 
-    background-color: transparent; 
+
+  100% {
+    background-color: transparent;
   }
 }
 
@@ -260,7 +344,12 @@ td.price-down {
 .all-market-data table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
+  margin-top: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  font-size: 11px;
 }
 
 .all-market-data th,
@@ -299,12 +388,13 @@ td.price-down {
   font-weight: bold;
   text-shadow: 0 0 1px rgba(255, 23, 68, 0.2);
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -312,34 +402,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -347,34 +470,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -382,34 +538,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -417,34 +606,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -452,34 +674,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -487,34 +742,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -522,34 +810,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -557,34 +878,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -592,34 +946,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -627,34 +1014,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -662,34 +1082,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -697,34 +1150,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -732,34 +1218,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -767,34 +1286,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -802,34 +1354,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -837,34 +1422,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -872,34 +1490,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -907,34 +1558,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -942,34 +1626,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -977,34 +1694,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1012,34 +1762,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1047,34 +1830,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1082,34 +1898,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1117,34 +1966,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1152,34 +2034,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1187,34 +2102,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1222,34 +2170,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1257,34 +2238,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1292,34 +2306,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1327,34 +2374,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1362,34 +2442,67 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
+
 .digital-clock {
   font-family: 'Roboto Mono', monospace;
-  font-size: 1.8em;
+  font-size: 1.4em;
   color: #ffffff;
   background: linear-gradient(135deg, #182848 0%, #4b6cb7 100%);
-  padding: 15px 25px;
+  padding: 12px 20px;
   border-radius: 10px;
   display: inline-block;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1397,25 +2510,57 @@ td.price-down {
 }
 
 @keyframes highlightRowUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightRowDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceUp {
-  0% { background-color: rgba(76, 175, 80, 0.3); }
-  50% { background-color: rgba(76, 175, 80, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(76, 175, 80, 0.3);
+  }
+
+  50% {
+    background-color: rgba(76, 175, 80, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
 
 @keyframes highlightPriceDown {
-  0% { background-color: rgba(244, 67, 54, 0.3); }
-  50% { background-color: rgba(244, 67, 54, 0.2); }
-  100% { background-color: transparent; }
+  0% {
+    background-color: rgba(244, 67, 54, 0.3);
+  }
+
+  50% {
+    background-color: rgba(244, 67, 54, 0.2);
+  }
+
+  100% {
+    background-color: transparent;
+  }
 }
